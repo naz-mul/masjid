@@ -1,3 +1,8 @@
 <resources>
-  <string name="app_name">Masjid</string>
+  <string name="app_name">Tralee Masjid</string>
+  <string name="contact">086 6038982</string>
+  <string name="address_label">Address</string>
+  <string name="address">17 Fort Field, Killierisk, Tralee, Co. Kerry</string>
+  <string name="description">Daily prayer service for the Tralee Muslim Community.</string>
+  <string name="hours_of_ops">Mon-Sun: 4am - 10pm</string>
 </resources>

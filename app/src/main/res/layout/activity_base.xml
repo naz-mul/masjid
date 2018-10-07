@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
@@ -7,9 +7,73 @@
   android:layout_height="match_parent"
   tools:context=".activities.BaseActivity">
 
-  <ImageView
+  <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:scaleType="centerCrop"/>
+    android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+      android:id="@+id/masjid_banner"
+      android:layout_width="0dp"
+      android:layout_height="164dp"
+      android:background="@drawable/masjid"
+      android:scaleType="centerCrop"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      />
+
+    <TextView
+      android:id="@+id/contact"
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="10dp"
+      android:text="@string/contact"
+      android:textAlignment="center"
+      android:textSize="24sp"
+      app:layout_constraintEnd_toEndOf="@id/masjid_banner"
+      app:layout_constraintStart_toStartOf="@id/masjid_banner"
+      app:layout_constraintTop_toBottomOf="@id/masjid_banner"/>
+
+    <TextView
+      android:id="@+id/address"
+      android:textStyle="normal"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:text="@string/address"
+      android:textAlignment="center"
+      android:textSize="20sp"
+      app:layout_constraintEnd_toEndOf="@id/contact"
+      app:layout_constraintStart_toStartOf="@id/contact"
+      app:layout_constraintTop_toBottomOf="@id/contact"/>
+
+    <TextView
+      android:id="@+id/description"
+      android:textStyle="normal"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:text="@string/description"
+      android:textAlignment="center"
+      android:textSize="20sp"
+      app:layout_constraintEnd_toEndOf="@id/address"
+      app:layout_constraintStart_toStartOf="@id/address"
+      app:layout_constraintTop_toBottomOf="@id/address"
+      />
+
+    <TextView
+      android:id="@+id/hours_of_operation"
+      android:textStyle="normal"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:text="@string/hours_of_ops"
+      android:textAlignment="center"
+      android:textSize="20sp"
+      app:layout_constraintEnd_toEndOf="@id/description"
+      app:layout_constraintStart_toStartOf="@id/description"
+      app:layout_constraintTop_toBottomOf="@id/description"
+      />
+  </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
