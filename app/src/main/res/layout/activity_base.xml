@@ -16,10 +16,10 @@
       android:layout_width="0dp"
       android:layout_height="164dp"
       android:background="@drawable/masjid"
+      android:contentDescription="@string/base_activity_banner_desc"
       android:scaleType="centerCrop"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      />
+      app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
       android:id="@+id/contact"
@@ -27,6 +27,7 @@
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:padding="10dp"
+      android:autoLink="phone"
       android:text="@string/contact"
       android:textAlignment="center"
       android:textSize="24sp"
@@ -40,6 +41,7 @@
       android:layout_width="0dp"
       android:layout_height="wrap_content"
       android:padding="5dp"
+      android:autoLink="map"
       android:text="@string/address"
       android:textAlignment="center"
       android:textSize="20sp"

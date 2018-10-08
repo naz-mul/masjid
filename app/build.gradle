@@ -20,6 +20,11 @@ android {
         release
     }
     compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
     defaultConfig {
         applicationId "me.nalam.masjid"
         minSdkVersion 21
@@ -32,9 +37,12 @@ android {
         debug {
             buildConfigField "boolean", "USE_CRASHLYTICS", "false"
             ext.enableCrashlytics = false
+            debuggable true
+            applicationIdSuffix ".debug"
+            minifyEnabled false
         }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             ext.enableCrashlytics = true
@@ -75,10 +83,10 @@ def initCrashlyticsPropertiesIfNeeded() {
 
 Properties props = new Properties()
 def propFile = file('../build.properties')
-if (propFile.canRead()){
+if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
 
-    if (props!=null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+    if (props != null && props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
             props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
 
         android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
